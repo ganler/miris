@@ -1,11 +1,11 @@
 package exec
 
 import (
-	filterlib "../filter"
-	gnnlib "../gnn"
-	"../miris"
-	"../predicate"
-	"../refine"
+	filterlib "github.com/favyen/miris/filter"
+	gnnlib "github.com/favyen/miris/gnn"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/predicate"
+	"github.com/favyen/miris/refine"
 
 	"log"
 	"os"

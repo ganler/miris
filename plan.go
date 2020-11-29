@@ -1,14 +1,15 @@
 package main
 
 import (
-	"./data"
-	"./miris"
-	"./planner"
+	"github.com/favyen/miris/data"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/planner"
 
 	"fmt"
 	"log"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -24,6 +25,17 @@ func main() {
 	}
 
 	ppCfg, modelCfg := data.Get(predName)
+	if predName == "beach-runner" {
+		fmt.Println(modelCfg)
+		for idx, _ := range modelCfg.Filters {
+			modelCfg.Filters[idx].Cfg["model_path"] = strings.ReplaceAll(modelCfg.Filters[idx].Cfg["model_path"], "beach-runner", "beach")
+		}
+		for idx, _ := range modelCfg.Refiners {
+			modelCfg.Refiners[idx].Cfg["model_path"] = strings.ReplaceAll(modelCfg.Refiners[idx].Cfg["model_path"], "beach-runner", "beach")
+		}
+		predName = "beach"
+		fmt.Println(modelCfg)
+	}
 
 	if qSamples == nil {
 		qSamples = planner.GetQSamples(2*freq, ppCfg, modelCfg)

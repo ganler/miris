@@ -1,10 +1,10 @@
 package main
 
 import (
-	"./data"
-	"./miris"
-	"./predicate"
-	rnnlib "./models/rnn"
+	"github.com/favyen/miris/data"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/predicate"
+	rnnlib "github.com/favyen/miris/models/rnn"
 
 	"fmt"
 	"log"

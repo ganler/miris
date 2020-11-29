@@ -1,8 +1,8 @@
 package refine
 
 import (
-	"../miris"
-	"../predicate"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/predicate"
 
 	"fmt"
 	"strconv"

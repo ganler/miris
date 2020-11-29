@@ -200,6 +200,7 @@ for label in LABELS:
 			frame_infos[frame_idx] = zip_frame_info(detections[frame_idx], label, frame_idx)
 		return frame_infos[frame_idx]
 	for frame_idx in range(0, len(detections), LOAD_SKIP):
+		frame_idx += 1
 		for skip in SKIP():
 			if frame_idx+skip >= len(detections) or not detections[frame_idx] or not detections[frame_idx+skip]:
 				continue

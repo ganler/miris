@@ -3,13 +3,13 @@ package predicate
 // miscellaneous queries
 
 import (
-	"../miris"
+	"github.com/favyen/miris/miris"
 	"github.com/mitroadmaps/gomapinfer/common"
 )
 
 func init() {
 	predicates["warsaw-brake"] = WarsawBrake
-	predicates["beach-runner"] = BeachRunner
+	predicates["beach"] = BeachRunner
 	predicates["shibuya-crosswalk"] = ShibuyaCrosswalk
 }
 

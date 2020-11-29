@@ -1,10 +1,11 @@
 package rnn
 
 import (
-	"../../miris"
-	"../../predicate"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/predicate"
 
 	"bufio"
+	"fmt"
 	"encoding/json"
 	"io"
 	"log"
@@ -156,6 +157,7 @@ func ItemsFromSegments(segments []miris.Segment, freq int, predFunc predicate.Pr
 	labels := make([]bool, len(tracks))
 	var numTrue, numFalse int
 	for i, track := range tracks {
+		fmt.Println(track)
 		if predFunc([][]miris.Detection{track}) {
 			labels[i] = true
 			numTrue++

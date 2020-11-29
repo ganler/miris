@@ -1,11 +1,11 @@
 package miris
 
 import (
-	"github.com/mitroadmaps/gomapinfer/common"
-
 	"encoding/json"
 	"io/ioutil"
 	"sort"
+
+	"github.com/mitroadmaps/gomapinfer/common"
 )
 
 type Detection struct {

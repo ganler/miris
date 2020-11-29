@@ -10,6 +10,7 @@ import numpy
 import math
 import os.path
 import skimage.io
+import skimage.transform
 import sys
 import tensorflow as tf
 import time
@@ -64,7 +65,7 @@ with open(detection_path, 'r') as f:
 	detections = json.load(f)
 
 def zip_frame_info(detections, frame_idx):
-	im = skimage.io.imread('{}/{}.jpg'.format(frame_path, pad6(frame_idx)))
+	im = skimage.io.imread('{}/{}.jpg'.format(frame_path, pad6(frame_idx + 1)))  # Refine the index;
 	im_bounds = geom.Rectangle(
 		geom.Point(0, 0),
 		geom.Point(im.shape[0], im.shape[1])

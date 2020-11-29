@@ -1,8 +1,8 @@
 package refine
 
 import (
-	"../miris"
-	"../predicate"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/predicate"
 
 	"fmt"
 	"math"
@@ -139,7 +139,9 @@ func (r *AccelRefiner) Plan(valTracks [][]miris.Detection, bound float64) map[st
 				continue
 			}
 			var minAccelUsed float64 = 9999
-			for r.predFunc([][]miris.Detection{coarse}) != label {
+			const max_loop = 1000
+			curloop := 0
+			for r.predFunc([][]miris.Detection{coarse}) != label && curloop < max_loop {
 				f1, f2, accel := r.refineOnce(coarse)
 				if accel < minAccelUsed {
 					minAccelUsed = accel
@@ -150,6 +152,7 @@ func (r *AccelRefiner) Plan(valTracks [][]miris.Detection, bound float64) map[st
 				if f2 != -1 {
 					coarse = r.insertDetection(coarse, track, f2)
 				}
+				curloop += 1
 			}
 			if label {
 				recallSamples = append(recallSamples, minAccelUsed)

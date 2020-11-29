@@ -1,9 +1,9 @@
 package refine
 
 import (
-	"../miris"
-	"../predicate"
-	rnnlib "../models/rnn"
+	"github.com/favyen/miris/miris"
+	"github.com/favyen/miris/predicate"
+	rnnlib "github.com/favyen/miris/models/rnn"
 
 	"fmt"
 	"strconv"

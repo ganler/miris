@@ -1,8 +1,8 @@
 package planner
 
 import (
-	"../filter"
-	"../miris"
+	"github.com/favyen/miris/filter"
+	"github.com/favyen/miris/miris"
 
 	"log"
 	"sort"

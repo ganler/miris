@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./data"
-	"./exec"
-	"./miris"
+	"github.com/favyen/miris/data"
+	"github.com/favyen/miris/exec"
+	"github.com/favyen/miris/miris"
 
 	"fmt"
 	"os"
